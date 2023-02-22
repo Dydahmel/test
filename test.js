@@ -186,3 +186,12 @@ const enableValidation = () => {
 
 // Call the function
 enableValidation();
+
+
+
+//closing modal by click on owerlay
+function closeModalByClick(evt){
+  if(evt.target.classList.contains('modal')){
+    closePopup(evt.target)
+  }
+};
