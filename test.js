@@ -195,3 +195,29 @@ function closeModalByClick(evt){
     closePopup(evt.target)
   }
 };
+
+
+
+
+function getCardElement(cardData){
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardImageEl = cardElement.querySelector('.card__image');
+  const cardLikeBtn = cardElement.querySelector('#card_like-button');
+  const cardTitleEl = cardElement.querySelector('.card__title');
+  const cardDeleteBtn = cardElement.querySelector('.card__delete-btn');
+  cardTitleEl.textContent = cardData.name;
+  cardImageEl.alt = cardData.name;
+  cardImageEl.src = cardData.link;
+
+  cardImageEl.addEventListener('click', () =>{    
+    modalImageEl.src = cardData.link;
+    modalImageEl.alt = cardData.name;
+    modalImageCaption.textContent = cardData.name;
+    openPopup(imageModal);
+  })
+  cardDeleteBtn.addEventListener('click', () => removeCard(cardElement));
+  cardLikeBtn.addEventListener('click', () => toggleLikeBtn(cardLikeBtn));
+
+
+  return cardElement;  
+}
