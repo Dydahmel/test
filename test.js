@@ -221,3 +221,23 @@ function getCardElement(cardData){
 
   return cardElement;  
 }
+
+
+
+///Intro logo /
+Information about dating in the US
+Info about the business OK Cupid
+
+2nd:
+What OK Cupid Users have said about them?
+Random Essays
+
+3rd:
+"9/10 dates end we have a solution"
+Analysis Information
+
+4th:
+Analyzing the data for ok Cupid
+
+5th:
+Conclusions why OK Cupid is amazing!
