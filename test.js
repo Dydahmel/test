@@ -241,3 +241,46 @@ Analyzing the data for ok Cupid
 
 5th:
 Conclusions why OK Cupid is amazing!
+
+
+
+
+//ASK ABOUT IT=>>
+
+function updateQuote(){
+  fetch("https://api.kanye.rest")
+   .then (res => res.json())
+   .then((data) => {
+    quoteElement.textContent = data.quote;
+  })
+}
+
+//create and add to DOM post with GET request
+// create markup for the post
+function createPostMarkup(post) {
+  return `
+    <div class="post">
+      <p class="post__title">${post.title}</p>
+      <p class="post__text">${post.body}</p>
+    </div>
+  `;
+}
+
+// insert markup into the DOM
+function addPostToDOM(container, markup) {
+  container.insertAdjacentHTML("afterbegin", markup);
+}
+
+function getPosts() {
+  // write your code here
+  fetch("https://jsonplaceholder.typicode.com/posts")
+    .then((res) => {
+      return res.json()})
+    .then((data) =>{
+      data.forEach((post) => {
+        addPostToDOM(document.querySelector(".container"), createPostMarkup(post))        
+      })
+    })
+}
+
+getPosts();
